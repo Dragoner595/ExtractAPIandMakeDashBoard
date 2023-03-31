@@ -205,24 +205,24 @@ st.sidebar.button(
 st.header(f'{ticker} Dashboard')
 
 # Check if we have the stock data, if not, download it
-# For Ticker price
+    # For Ticker price
 if os.path.isfile(f'data/{ticker}_price.csv'):
     price_data = pd.read_csv(f'data/{ticker}_price.csv')
 else:
     price_data = get_data(ticker)
-# For Balance sheet
+    # For Balance sheet
 if os.path.isfile(f'data/{ticker}_balance.csv'):
     df2 = pd.read_csv(f'data/{ticker}_balance.csv')
 else:
     df2 = get_data(ticker)
-# For Cash sheet
+    # For Cash sheet
 if os.path.isfile(f'data/{ticker}_cash.csv'):
     df3 = pd.read_csv(f'data/{ticker}_cash.csv')
 else:
     df3 = get_data(ticker)
 
 st.subheader('Price chart')
-# inserting our function in to ploty_chart
+    # inserting our function in to ploty_chart
 st.plotly_chart(
     get_candlestick_chart(price_data, ma_type, ma_length, plot_days)
 )
