@@ -1,6 +1,6 @@
+from datetime import date
 import pandas as pd
 from pandas_datareader import data as pdr
-from datetime import date
 import yfinance as yf
 import streamlit as st
 import plotly.graph_objects as go
